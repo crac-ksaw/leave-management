@@ -121,11 +121,10 @@ employee-leave-management/
 │   │   ├── Leave.js         # Schema for leave requests
 │   ├── server.js            # Main backend server
 │   ├── package.json         # Backend dependencies
-├── frontend/
-│   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── pages/           # React pages (Dashboard, Login, etc.)
-│   │   ├── App.js           # Main React app
+├── src/
+│   ├── components/          # React components
+│   ├── pages/               # React pages (Dashboard, Login, etc.)
+│   ├── App.js               # Main React app
 │   ├── package.json         # Frontend dependencies
 ├── README.md                # Project documentation
 ```
