@@ -3,7 +3,7 @@
 # **Employee Leave Management System**
 
 ## **Project Description**
-The **Employee Leave Management System** is a web application designed to manage employee leave requests. The system provides:
+The **Employee Leave Management System** is a web application designed to manage employee leave requests. The system provides
 - Employees with the ability to submit leave requests.
 - Managers with the ability to view pending requests, approve, or reject them.
 
