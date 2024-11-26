@@ -1,0 +1,35 @@
+/* PendingRequestsTable.css */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f8f8f8;
+  }
+  
+  button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  button.approve {
+    background-color: #28a745;
+  }
+  
+  button.reject {
+    background-color: #dc3545;
+  }  
