@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Employee Leave Management System**
 
-## Available Scripts
+## **Project Description**
+The **Employee Leave Management System** is a web application designed to manage employee leave requests. The system provides
+- Employees with the ability to submit leave requests.
+- Managers with the ability to view pending requests, approve, or reject them.
 
-In the project directory, you can run:
+The project is built with **React.js** for the frontend, **Node.js** for the backend, and **MongoDB** as the database.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Features**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **For Employees**
+- Submit leave requests with a reason and specific dates.
+- View their past leave requests and their current status (Pending, Approved, Rejected).
 
-### `npm test`
+### **For Managers**
+- View a list of all pending leave requests.
+- Approve or reject leave requests.
+- Track submission dates and reasons for leave.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## **Tech Stack**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Frontend**
+- **React.js**
+- **Material-UI (MUI)** for styling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Backend**
+- **Node.js**
+- **Express.js**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Database**
+- **MongoDB** (Local or Cloud via MongoDB Atlas)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **Setup Instructions**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **1. Clone the Repository**
+```bash
+git clone <repository_url>
+cd employee-leave-management
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **2. Install Dependencies**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### **Backend**
+Navigate to the `backend` folder and install dependencies:
+```bash
+cd backend
+npm install
+```
 
-## Learn More
+#### **Frontend**
+Navigate to the `frontend` folder and install dependencies:
+```bash
+cd ../frontend
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **3. Environment Variables**
+Create a `.env` file in the `backend` folder and add the following variables:
+```env
+MONGO_URI=mongodb://localhost:27017/leave-management
+PORT=5000
+JWT_SECRET=your_secret_key
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **4. Start the Application**
 
-### Analyzing the Bundle Size
+#### **Backend**
+Navigate to the `backend` folder and start the server:
+```bash
+cd backend
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The server will run at: `http://localhost:5000`.
 
-### Making a Progressive Web App
+#### **Frontend**
+Navigate to the `frontend` folder and start the React app:
+```bash
+cd ../frontend
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application will open in your browser at: `http://localhost:3000`.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## **API Endpoints**
 
-### Deployment
+### **Authentication**
+- **POST /api/signup**: Register a new user (Manager or Employee).
+- **POST /api/login**: Authenticate a user.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **Leave Requests**
+- **POST /api/leave-request**: Submit a new leave request (Employee).
+- **GET /api/leave-requests/:username**: Fetch all leave requests for a specific employee.
+- **GET /api/manager/leave-requests**: Fetch all pending leave requests for the manager.
+- **POST /api/manager/leave-action**: Approve or reject a leave request.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## **Project Structure**
+
+```
+employee-leave-management/
+├── backend/
+│   ├── models/
+│   │   ├── User.js          # Schema for user data
+│   │   ├── Leave.js         # Schema for leave requests
+│   ├── server.js            # Main backend server
+│   ├── package.json         # Backend dependencies
+├── src/
+│   ├── components/          # React components
+│   ├── pages/               # React pages (Dashboard, Login, etc.)
+│   ├── App.js               # Main React app
+│   ├── package.json         # Frontend dependencies
+├── README.md                # Project documentation
+```
+
+---
+
+## **Future Enhancements**
+- Implement JWT for secure authentication.
+- Add email notifications for approval/rejection of leave requests.
+- Add role-based dashboards (Manager vs. Employee).
+- Enable light/dark mode toggle for better UX.
+- Deploy the application using platforms like Vercel (Frontend) and Heroku (Backend).
+
+---
+
+## **Contributing**
+If you'd like to contribute to this project, please fork the repository and submit a pull request. For any questions or feedback, feel free to open an issue.
+
+---
